@@ -25,3 +25,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function abrirGaveta() {
+  document.getElementById("gaveta").style.width = "250px";
+}
+
+function fecharGaveta() {
+  document.getElementById("gaveta").style.width = "0";
+}

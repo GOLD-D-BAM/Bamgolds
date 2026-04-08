@@ -30,7 +30,7 @@ box-sizing: border-box;
 .light {
 
     --bg-url: url(./assets/light_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
-    --text-color: rgb(0, 0, 0);
+    --text-color: rgb(255, 255, 255);
     --stroke-color : rgb(255, 255, 255) 0.5;
     --surface-color: rgb(255, 255, 255);
     --surface-color-hover: rgb(0, 0, 0);
@@ -299,6 +299,33 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     transform: translateX(-20%) translateY(-57%);
    transition: all 0.3s ease;
 }
+.gaveta {
+  height: 100%;
+  width: 0; /* começa fechada */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.gaveta a {
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+.gaveta .fechar {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+}
+
+
 
 #switch span{
     display: inline-block; /*dsiplay-block funciona jogando o texto para ocupar tosdas a linha a baixo fazendo uma linha na vertical.
