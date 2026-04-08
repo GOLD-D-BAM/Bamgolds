@@ -101,7 +101,19 @@ em cada caixa uma bordar, e tudo que for posta dentro dessa caixa ira aumentando
    
 }
 
-#tnt {
+#box-4 { 
+width: 100%;
+height: 100vh;
+background-size: cover;
+background-attachment: scroll;
+
+
+}
+
+
+#tnt
+
+{
     
      text-align: center;
      animation: tnt 3s linear;
