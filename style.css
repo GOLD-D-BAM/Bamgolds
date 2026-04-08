@@ -5,7 +5,6 @@ ID- e o identificador de um cod, que pode ser usado dentro do css, após add uma
 <link rel="stylesheet" href="style.css"> comando de seletor der arquivos da pasto do html. 
 
 */
-
 *{ padding: 0;
 margin: 0;
 box-sizing: border-box;
@@ -46,12 +45,6 @@ box-sizing: border-box;
 body { background: black; - para colocar  uma cor de fundo, sempre junto de uma propriedade :red; ou  especifica no caso.
 */
      background-image: var(--bg-url);
-     background-size: cover;
-     background-attachment: scroll;
-     background-repeat: no-repeat;
-     background-position: center;
- /*valor de repeticao do fundo=,valor de posicionamento/valor de cobrir=cover!*/
-     color: var(--text-color);
 }
 /* o body e a tag que envolve todo o conteudo do html, então tudo que for colocado dentro do body, ira receber as propriedades do body
 
@@ -60,7 +53,9 @@ text-right:  param deixar full direita
 text-left: pra deixar full esquerda
 */
 body{
-   
+   margin: 0%;
+   min-height: 100vh;
+
      background-image: var(--bg-url);
      background-size: cover;
      background-attachment: scroll;
@@ -101,14 +96,6 @@ em cada caixa uma bordar, e tudo que for posta dentro dessa caixa ira aumentando
    
 }
 
-#box-4 { 
-width: 100%;
-height: 100vh;
-background-size: cover;
-background-attachment: scroll;
-
-
-}
 
 
 #tnt
@@ -211,28 +198,34 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 #box-2 img{
      
 
-  
-    opacity: 0;
-
+    
     border-radius: 50%;
     border: 2px solid rgb(0, 0, 0);
     width: 112px;
 
 
-    animation: aparecer 2s forwards;
-    animation-delay: 3s; /* espera antes de tudo começar */
-    animation-iteration-count: 1; /* NÃO repete */
-   
-   
+}
 
+#text-box{
+    max-width: 580px;
+     width: 100%;
+     margin: 58px auto 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/
+     padding: 24px;
+     font-weight: 500; font-weight: 24px; 
+    line-height: 24px;
+    margin-top: 24px;
 }
 
 #switch{
 
-    position: relative;
-   width: 32px;
-   margin-left: 235px;
-   margin-right: -40px;
+ position: relative;
+ width: 32px;
+ margin-left: 20px;
+ top: -5%;
+
+   
 
 }   
 
@@ -311,6 +304,8 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     transform: translateX(-20%) translateY(-57%);
    transition: all 0.3s ease;
 }
+
+
 .gaveta {
   height: 100%;
   width: 0; /* começa fechada */
