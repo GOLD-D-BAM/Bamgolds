@@ -16,9 +16,9 @@ box-sizing: border-box;
     --bg-url: url(./assets/night_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
     --text-color: rgb(255, 255, 255);
     --stroke-color : rgb(0, 0, 0);
-    --surface-color: rgb(0, 0, 0);
+    --surface-color: rgb(255, 255, 255);
     --surface-color-hover: rgb(255, 255, 255);
-    --hightlight-color: rgb(88, 105, 100);
+    --hightlight-color: rgb(0, 0, 0);
     --switch-bg: url(./assets/moon.svg);
 }
 
@@ -29,11 +29,11 @@ box-sizing: border-box;
 .light {
 
     --bg-url: url(./assets/light_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
-    --text-color: rgb(255, 255, 255);
-    --stroke-color : rgb(255, 255, 255) 0.5;
-    --surface-color: rgb(255, 255, 255);
+    --text-color: rgb(0, 0, 0);
+    --stroke-color : rgb(14, 14, 14) 0.5;
+    --surface-color: rgb(0, 0, 0);
     --surface-color-hover: rgb(0, 0, 0);
-    --hightlight-color: rgb(88, 105, 100);
+    --hightlight-color: rgb(255, 255, 255);
     --switch-bg: url(./assets/sun.svg);
 }
 
@@ -191,6 +191,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     margin-top: 10px;
     
    text-align: center;
+   text-decoration: rgb(var(--text-color));
     
     
 }
@@ -200,7 +201,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
     
     border-radius: 50%;
-    border: 2px solid rgb(0, 0, 0);
+     height: 112px;
     width: 112px;
 
 
@@ -238,7 +239,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid var(black);
+    border: 1px solid var(--surface-color);
 
    
    background-repeat: no-repeat;
@@ -286,7 +287,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     right: 0;
     left: initial ;
     border-radius: 50%;
-    border: 1px solid var(black);
+    border: 1px solid var(--surface-color);
    
    
    background-repeat: no-repeat;
@@ -307,12 +308,13 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 
 .gaveta {
+ border: 1px solid var(--surface-color);
   height: 100%;
   width: 0; /* começa fechada */
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgb(transparent);
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
@@ -321,7 +323,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 .gaveta a {
   padding: 10px 20px;
   text-decoration: none;
-  color: white;
+  color: rgb(var(--hightlight-color));
   display: block;
 }
 
@@ -434,7 +436,7 @@ footer{
     padding: 24px;
 
     ;
-    text-align: center; color: white;
+    text-align: center; color: var(--text-color);
    font-size: 14px;
 
 } 
