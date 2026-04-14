@@ -208,6 +208,18 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 }
 
 #text-box{
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+    
+     border-radius: 50px;
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     border-radius: 8px;
     max-width: 580px;
      width: 100%;
      margin: 58px auto 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
@@ -230,7 +242,9 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 }   
 
-#switch button:hover{outline:5px solid var(--surface-color) ;}   
+#switch button:hover{outline:5px solid var(--surface-color);
+
+}   
 
 
  #switch button {
@@ -308,19 +322,26 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 
 .gaveta {
+
+
     border: 1px solid var(--surface-color);
   height: 100%;
   width: 0; /* começa fechada */
   position: fixed;
   top: 0;
   left: 0;
-  background-color: var(--hightlight-color);
+  background-color: transparent;
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
 }
 
 .gaveta a {
+
+
   padding: 10px 20px;
   text-decoration: none;
   color: rgb(var(--hightlight-color));
@@ -328,6 +349,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 }
 
 .gaveta .fechar {
+
   position: absolute;
   top: 10px;
   right: 20px;
@@ -429,6 +451,88 @@ ul li a:hover {
     background-color:var(--surface-color-hover);
     color: var(--text-color);
     background: var(--hightlight-color);
+}
+
+
+#formacoes ul {
+    opacity: 0;
+
+     animation: aparecer 2s forwards;
+     animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+
+
+     display: flex;
+     justify-content: center;
+     padding: 24px;
+     font-size: 20px;
+     flex-direction: row;
+     
+     gap: 20px;
+
+ 
+}
+
+#formacoes li image{
+     width: 25px;
+     height: 10%;
+     margin-bottom: 10px;
+  display: flex;
+  flex-direction: column; /* empilha imagem + texto */
+  align-items: center; /* centraliza */
+}
+
+
+#formacoes img {
+   
+     
+     width: 25px;
+     height: 10%;
+     margin-bottom: 10px;
+    
+
+}
+
+#next {
+opacity: 0;
+
+     animation: aparecer 2s forwards;
+     animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    transition: background 0.2s;
+} 
+
+
+#return {
+
+    opacity: 0;
+
+     animation: aparecer 2s forwards;
+     animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    transition: background 0.2s;
+   
+    
 }
 
 footer{

@@ -32,3 +32,8 @@ function abrirGaveta() {
 function fecharGaveta() {
   document.getElementById("gaveta").style.width = "0";
 }
+
+function proximo() {
+    document.getElementById("next").style.display = ""
+    document.getElementById("return").style.display = ""
+}
