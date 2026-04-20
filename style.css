@@ -298,7 +298,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 
 .light  #switch button{
-    right: 0;
+ right: 0;
     left: initial ;
     border-radius: 50%;
     border: 1px solid var(--surface-color);
@@ -324,19 +324,21 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 .gaveta {
 
 
-    border: 1px solid var(--surface-color);
+  border: 1px solid var(--surface-color);
+
   height: 100%;
   width: 0; /* começa fechada */
   position: fixed;
   top: 0;
   left: 0;
-  background-color: transparent;
-   backdrop-filter: blur(4px);
-   -webkit-backdrop-filter: blur(4px);
+  background-image: url(./assets/HD-wallpaper-minecraft-cube-mohan-mojang-pixel-steve-thumbnail.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 60px;
+  z-index: 1;
 }
 
 .gaveta a {
@@ -454,44 +456,36 @@ ul li a:hover {
 }
 
 
-#formacoes ul {
-    opacity: 0;
-
-     animation: aparecer 2s forwards;
-     animation-delay: 3s; /* espera antes de tudo começar */
-     animation-iteration-count: 1; /* NÃO repete */
-
-
-     display: flex;
-     justify-content: center;
-     padding: 24px;
-     font-size: 20px;
-     flex-direction: row;
-     
-     gap: 20px;
-
- 
-}
-
-#formacoes li image{
-     width: 25px;
-     height: 10%;
-     margin-bottom: 10px;
-  display: flex;
-  flex-direction: column; /* empilha imagem + texto */
-  align-items: center; /* centraliza */
-}
-
 
 #formacoes img {
-   
-     
-     width: 25px;
-     height: 10%;
-     margin-bottom: 10px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    margin-left: 10px;
+    margin-right: 10px;
     
+    transition: background 0.2s;
+    border-radius: 50%;
+    border: 1.5px solid var(--surface-color-hover);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(04px);
+
 
 }
+
+
+#formacoes a:hover{
+    border: 2px solid var(--surface-color-hover);
+    background-color:var(--surface-color-hover);
+    color: var(--text-color);
+    background: var(--hightlight-color);
+}
+
+
 
 #next {
 opacity: 0;
