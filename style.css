@@ -457,33 +457,49 @@ ul li a:hover {
 
 
 
-#formacoes img {
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
+.formacoes ul {
+    opacity: 0;
 
-    margin-left: 10px;
-    margin-right: 10px;
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* 👈 melhor que margin */
+}
+
+.formacoes img {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+  height: 50px;
+  width: 50px;
+  padding: 12px;
+
+  border-radius: 50%;
+  border: 1.5px solid var(--surface-color-hover);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
     
-    transition: background 0.2s;
-    border-radius: 50%;
-    border: 1.5px solid var(--surface-color-hover);
-
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(04px);
-
+.formacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
 }
 
 
-#formacoes a:hover{
-    border: 2px solid var(--surface-color-hover);
-    background-color:var(--surface-color-hover);
-    color: var(--text-color);
-    background: var(--hightlight-color);
-}
+
 
 
 
