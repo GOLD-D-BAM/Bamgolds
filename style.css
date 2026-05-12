@@ -63,12 +63,16 @@ body{
     background-position: center;
  /*valor de repeticao do fundo=,valor de posicionamento/valor de cobrir=cover!*/
      color: var(--text-color);
+
+      overflow-x: hidden;
 }
 
 body * {
     font-family:  "inter", Helvetica, sans-Pixelizar;
    -webkit-text-stroke-color: azure;
     font-size: 20px;
+
+     
 }
 
 /* CORRIGE o BACK NO CELULAR */
