@@ -248,9 +248,26 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 }   
 
-#switch button:hover{outline:5px solid var(--surface-color);
+#switch button:hover{outline:5px solid var(--surface-color);}
 
-}   
+
+    
+
+#switch span{
+    display: inline-block; /*dsiplay-block funciona jogando o texto para ocupar tosdas a linha a baixo fazendo uma linha na vertical.
+    dsiplay-line, ele ocupa toda caixa em formato da linh na vertical.*/
+
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color );
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 999px;
+    border: 0;
+}
+
+
 
 
  #switch button {
@@ -367,21 +384,6 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 }
 
 
-
-#switch span{
-    display: inline-block; /*dsiplay-block funciona jogando o texto para ocupar tosdas a linha a baixo fazendo uma linha na vertical.
-    dsiplay-line, ele ocupa toda caixa em formato da linh na vertical.*/
-
-    width: 64px;
-    height: 24px;
-    background: var(--surface-color );
-    border: 1px solid var(--stroke-color);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    border-radius: 999px;
-    border: 0;
-}
-
 ul{
     list-style: none;
     display: flex;
@@ -463,6 +465,11 @@ ul li a:hover {
     background: var(--hightlight-color);
 }
 
+.formacoes li {
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 .formacoes ul {
@@ -506,38 +513,19 @@ ul li a:hover {
 
 }
 
+.nexrun {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
 
 
 
-
-
+#next,
 #return {
-    
-opacity: 0;
-
-     animation: aparecer 2s forwards;
-     animation-delay: 3s; /* espera antes de tudo começar */
-     animation-iteration-count: 1; /* NÃO repete */
-    transition: background 0.2s;
-
-    border: none;
-    background: transparent;
-    appearance: none;
-    -webkit-appearance: none;
-
-    position: fixed;
-    position: relative;
-    cursor: pointer;
-
-    width: 100px;
-    height: 100px;
-    padding: 0;
-
-    left: 830px;
-} 
-
-
-#next {
   
     opacity: 0;
 
@@ -553,7 +541,7 @@ opacity: 0;
     appearance: none;
     -webkit-appearance: none;
 
-    position: fixed;
+   
     position: relative;
     cursor: pointer;
 
@@ -561,15 +549,14 @@ opacity: 0;
     height: 100px;
     padding: 0;
 
-    left: 500px;
     
 }
 #return img,#next img {
 
- width: 70%;
+    width: 70%;
     height: 100%;
     object-fit: contain;
-    display: block;
+   position: relative;
 }
 
 footer{
