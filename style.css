@@ -1,0 +1,585 @@
+/*
+CSS -1
+ID- e o identificador de um cod, que pode ser usado dentro do css, após add uma ID, no css  "#" serve como seletor do ID criado. no HTML.
+
+<link rel="stylesheet" href="style.css"> comando de seletor der arquivos da pasto do html. 
+
+*/
+*{ padding: 0;
+margin: 0;
+box-sizing: border-box;
+
+}
+
+
+:root{  
+    --bg-url: url(./assets/night_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(255, 255, 255);
+    --stroke-color : rgb(0, 0, 0);
+    --surface-color: rgb(255, 255, 255);
+    --surface-color-hover: rgb(255, 255, 255);
+    --hightlight-color: rgb(0, 0, 0);
+    --switch-bg: url(./assets/moon.svg);
+}
+
+
+
+
+
+.light {
+
+    --bg-url: url(./assets/light_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(0, 0, 0);
+    --stroke-color : rgb(14, 14, 14) 0.5;
+    --surface-color: rgb(0, 0, 0);
+    --surface-color-hover: rgb(0, 0, 0);
+    --hightlight-color: rgb(255, 255, 255);
+    --switch-bg: url(./assets/sun.svg);
+}
+
+/*a ultima sempre sera a priorizada  no css.*/
+
+ 
+  body.light {
+    /*
+body { background: black; - para colocar  uma cor de fundo, sempre junto de uma propriedade :red; ou  especifica no caso.
+*/
+     background-image: var(--bg-url);
+}
+/* o body e a tag que envolve todo o conteudo do html, então tudo que for colocado dentro do body, ira receber as propriedades do body
+
+text-align: center/ para centralizar
+text-right:  param deixar full direita
+text-left: pra deixar full esquerda
+*/
+body{
+   margin: 0%;
+   min-height: 100vh;
+
+     background-image: var(--bg-url);
+     background-size: cover;
+     background-attachment: scroll;
+     background-repeat: no-repeat;
+    background-position: center;
+ /*valor de repeticao do fundo=,valor de posicionamento/valor de cobrir=cover!*/
+     color: var(--text-color);
+
+      overflow-x: hidden;
+}
+
+body * {
+    font-family:  "inter", Helvetica, sans-Pixelizar;
+   -webkit-text-stroke-color: azure;
+    font-size: 20px;
+
+     
+}
+
+/* CORRIGE o BACK NO CELULAR */
+@media (max-width: 768px) {
+  body, body.light {
+      background-attachment: scroll; /* impede bug no mobile */
+      background-size: cover;        /* mantém proporcional ao celular */
+      background-position: center;   /* centraliza certinho */
+  }
+}
+
+
+
+#box-1{ 
+    /*
+em cada caixa uma bordar, e tudo que for posta dentro dessa caixa ira aumentando com ela.nunca a passando.
+*/
+
+     max-width: 580px;
+     width: 100%;
+     margin: 58px auto 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/
+     padding: 24px;
+   
+}
+
+
+
+#tnt
+
+{
+    
+     text-align: center;
+     animation: tnt 3s linear;
+}
+
+@keyframes tnt {
+     0% { transform: translateY(calc(-50vw + -100px)); }
+     100% { transform: translateY(500px); }
+}/*keyframes de animação do tnt caindo,key frames e usado para deixar uma imagem ou 
+objeto animado,basta vc colocar a direcão dessejada do objeto que vc quer animar 
+direções usadas y,z,x,w*/
+
+#tnt img{
+     position: 1500px;
+     border-radius: 0%;
+     border: none;
+     height: 100px;
+     width: 100px;
+    
+}
+#explosion img{
+     width: 100%;
+     height: 100%;
+    object-fit: cover;
+}
+
+
+#explosion {
+     pointer-events: none; /* para não interferir na interação do usuário */
+     display: flex;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+
+     opacity: 0;
+     animation: aparecerDesaparecer 3s forwards; 
+    animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+}
+
+/* 0% = invisível
+   20% = aparece
+   80% = fica visível
+   100% = some */
+@keyframes aparecerDesaparecer {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+  /* keyframes para fazer a explosão aparecer e desaparecer,pode ser usado uma opacidade, para fazer aparecer
+  e desaparecer o item desejado quantas vezes vc quiser. so basta por a quantidade desejada!  */
+}
+
+
+@keyframes aparecer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    
+}
+
+
+#box-1 {
+
+
+     opacity: 0;
+    
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+    font-weight: 500; font-weight: 24px; 
+    line-height: 24px;
+    margin-top: 24px;
+  
+
+}
+
+
+#box-2 text {/*
+então para centralizar algo, necessário a criação do pai da div, e codificando.
+ sera possível a a centralização do algo dentro da div pai
+*/
+    margin-top: 10px;
+    
+   text-align: center;
+   text-decoration: rgb(var(--text-color));
+    
+    
+}
+
+#box-2 img{
+     
+
+    
+    border-radius: 50%;
+     height: 112px;
+    width: 112px;
+
+
+}
+
+#text-box{
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+    
+     border-radius: 50px;
+     backdrop-filter: blur(4px);
+     -webkit-backdrop-filter: blur(4px);
+     border-radius: 8px;
+    max-width: 580px;
+     width: 100%;
+     margin: 58px auto 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/
+     padding: 24px;
+     font-weight: 500; font-weight: 24px; 
+    line-height: 24px;
+    margin-top: 24px;
+}
+
+#switch{
+
+ position: fixed;
+ width: 75px;
+ margin-top:  -35px;
+ margin-left: 30px;
+ margin-right: 10px;
+
+
+   
+
+}   
+
+#switch button:hover{outline:5px solid var(--surface-color);}
+
+
+    
+
+#switch span{
+    display: inline-block; /*dsiplay-block funciona jogando o texto para ocupar tosdas a linha a baixo fazendo uma linha na vertical.
+    dsiplay-line, ele ocupa toda caixa em formato da linh na vertical.*/
+
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color );
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 999px;
+    border: 0;
+}
+
+
+
+
+ #switch button {
+
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--surface-color);
+
+   
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   cursor: pointer;
+
+
+
+   position: absolute;
+   top: 50%;
+   right: 50px;
+   z-index: 1;
+    transform: translateY(-60%) translateX(15%);
+    transition: all 0.3s ease;
+
+}
+#play {background-color: transparent;}
+
+#moon { display: inline;}
+#sun {display: none;}
+
+.light #moon { display: none;}
+.light #sun {display: inline;}
+
+
+
+
+
+@keyframes cloudsMove {
+  0% { transform: translateX(700px); }
+  100% { transform: translateX(calc(-50vw + -100px)); }
+
+  0% { opacity: 0; }
+    100% { opacity: 1; }
+    
+
+}
+
+
+
+
+
+.light  #switch button{
+ right: 0;
+    left: initial ;
+    border-radius: 50%;
+    border: 1px solid var(--surface-color);
+   
+   
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   cursor: pointer;
+
+
+
+   position: absolute;
+   top: 50%;
+   right: 0;
+   z-index: 1;
+
+    transform: translateX(-20%) translateY(-57%);
+   transition: all 0.3s ease;
+}
+
+
+.gaveta {
+
+
+  border: 1px solid var(--surface-color);
+
+  height: 100%;
+  width: 0; /* começa fechada */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  background-size: cover;
+
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.gaveta a {
+
+
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(var(--hightlight-color));
+  display: block;
+}
+
+.gaveta .fechar {
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+}
+
+
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    margin-top: 24px;
+
+
+
+}
+
+ul li a{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;
+
+    background-color: rgb(var(--hightlight-color));
+    border: 1px solid rgb(var(--stroke-color));
+    border-radius: none;
+
+    -webkit-backdrop-filter: blur(04px);
+    backdrop-filter: blur(04px);
+   
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background  0.3s;
+    border: 1.5px solid var(--surface-color-hover);
+}
+
+
+ul li a:hover {
+    background: var(--hightlight-color, 0.5);
+    border: 1.5px solid var(--surface-color-hover);
+    color: var(--text-color)
+
+}
+
+#social-links{
+
+    display: flex;
+    justify-content: center;
+    
+
+    padding: 24px;
+    
+    font-size: 24px;
+
+}
+
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+    
+    transition: background 0.2s;
+    border-radius: 50%;
+    border: 1.5px solid var(--surface-color-hover);
+
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(04px);
+
+    
+}
+
+#social-links a:hover{
+    border: 2px solid var(--surface-color-hover);
+    background-color:var(--surface-color-hover);
+    color: var(--text-color);
+    background: var(--hightlight-color);
+}
+
+.formacoes li {
+     display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.formacoes ul {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* 👈 melhor que margin */
+}
+
+.formacoes img {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+  height: 60px;
+  width: 60px;
+  padding: 12px;
+
+  border-radius: 50%;
+  border: 1.5px solid var(--surface-color-hover);
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+    
+.formacoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.nexrun {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+
+
+#next,
+#return {
+  
+    opacity: 0;
+
+     animation: aparecer 2s forwards;
+     animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+    transition: background 0.2s;
+
+    
+
+    border: none;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+
+   
+    position: relative;
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+    padding: 0;
+
+    
+}
+#return img,#next img {
+
+    width: 70%;
+    height: 100%;
+    object-fit: contain;
+   position: relative;
+}
+
+footer{
+    
+    padding: 24px;
+
+    ;
+    text-align: center; color: var(--text-color);
+   font-size: 14px;
+
+} 
+
+
+@media (min-width: 1080px) {
+  :root {
+   --bg-url: url(./assets/mine-bg-dark.png);}
+
+  .light {
+--bg-url: url(./assets/mine-bg-desktop.png);
+}
+}
+* {
+  font-family: "Pixelify Sans", sans-serif !important;
+}
+
+
