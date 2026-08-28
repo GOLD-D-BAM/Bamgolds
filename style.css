@@ -212,12 +212,12 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 }
 
 #text-box{
-    opacity: 0;
+   
+ opacity: 0;
 
     animation: aparecer 2s forwards;
     animation-delay: 3s; /* espera antes de tudo começar */
     animation-iteration-count: 1; /* NÃO repete */
-
 
     
      border-radius: 50px;
@@ -233,6 +233,24 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
      font-weight: 500; font-weight: 24px; 
     line-height: 24px;
     margin-top: 24px;
+}
+
+
+.gaveta-button button, .gaveta-button img {
+ opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    width: 50px;
+    height: 50px;
 }
 
 #switch{
@@ -469,6 +487,8 @@ ul li a:hover {
      display: flex;
   flex-direction: column;
   align-items: center;
+
+  
 }
 
 
@@ -488,7 +508,9 @@ ul li a:hover {
 }
 
 .formacoes img {
+
     opacity: 0;
+    cursor: pointer;
 
     animation: aparecer 2s forwards;
     animation-delay: 3s; /* espera antes de tudo começar */
@@ -504,13 +526,28 @@ ul li a:hover {
 
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+
+  
 }
     
 .formacoes {
+
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  
+}
+
+#formacoes button {
+
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    object-fit: contain;
+   
 }
 
 .nexrun {
