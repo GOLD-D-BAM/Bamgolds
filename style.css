@@ -487,11 +487,29 @@ ul li a:hover {
     background: var(--hightlight-color);
 }
 
+.lista-formacoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 16px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lista-formacoes li {
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
 /* ↓ Container principal das formações */
 .formacoes {
     
-    display: flex;
-
     /* ↓ Permite que os elementos quebrem para outra linha */
     flex-wrap: wrap;
 
@@ -540,21 +558,6 @@ ul li a:hover {
 
 }
 
-/* ↓ A lista inteira organiza os itens lado a lado */
-.formacoes ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-
-}
 
 
 /* ↓ Cada tecnologia */
@@ -568,6 +571,12 @@ ul li a:hover {
   -webkit-backdrop-filter: blur(4px);
 
 }
+
+#formacoes img:hover{outline:2px solid var(--surface-color);
+    border-radius: 45%;
+
+}
+
 .formacoesabrir {
 
 
@@ -609,6 +618,7 @@ ul li a:hover {
 
 
 #formacoes button {
+    border-radius: 50px;
 
     background: transparent;
     border: none;
