@@ -116,46 +116,105 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
 </div>
 
 
+      
 <div id="formacoes" class="formacoes">
-  
-      <ul> 
-           <li><button><img src="./assets/html-5-svgrepo-com.svg" alt="HTML"></button>
+
+           <li><button onclick="togglePopup(this, 'HTML', 'HTML é a linguagem usada para estruturar páginas web.')">
+            <img src="./assets/html-5-svgrepo-com.svg" alt="HTML"></button>
            <span>HTML</span></li>
 
-           <li><button><img src="./assets/css-3-svgrepo-com.svg" alt="CSS"></button>
+           <li><button onclick="togglePopup(this, 'CSS', 'CSS é a linguagem usada para estilizar páginas web.')">
+            <img src="./assets/css-3-svgrepo-com.svg" alt="CSS"></button>
            <span>CSS</span></li>
           
-           <li><button><img src="./assets/js-svgrepo-com.svg" alt="JavaScript"></button>
-           <span>JavaScript</span></li>
+           <li>
+            <button onclick="togglePopup(this, 'JavaScript', 'JavaScript é a linguagem usada para adicionar interatividade às páginas web.')">
+            <img src="./assets/js-svgrepo-com.svg" alt="JavaScript"></button>
+           
+            <span>JavaScript</span>
+          </li>
 
-           <li><button><img src="./assets/github-142-svgrepo-com.svg" alt="github"></button>
-           <span>github</span></li>
+
+           <li>
+
+            <button onclick="togglePopup(this, 'GitHub', 'GitHub é uma plataforma de hospedagem de código-fonte com controle de versão.')">
+            <img src="./assets/github-142-svgrepo-com.svg" alt="github"></button>
+           
+            <span>github</span>
+          
+          </li>
         
-           <li><button><img src="./assets/git-svgrepo-com.svg" alt="git"></button>
+           <li><button onclick="togglePopup(this, 'Git', 'Git é um sistema de controle de versão distribuído.')">
+            <img src="./assets/git-svgrepo-com.svg" alt="git"></button>
            <span>git</span></li>
             
-           <li><button><img src="./assets/java-svgrepo-com.svg" alt="Java"></button>
+           <li><button onclick="togglePopup(this, 'Java', 'Java é uma linguagem de programação orientada a objetos.')">
+            <img src="./assets/java-svgrepo-com.svg" alt="Java"></button>
            <span>Java</span></li>
 
-           <li><button><img src="./assets/database-svgrepo-com.svg" alt="Banco de Dados"></button>
+           <li><button onclick="togglePopup(this, 'Banco de Dados', 'Banco de Dados é um sistema de gerenciamento de dados.')">
+            <img src="./assets/database-svgrepo-com.svg" alt="Banco de Dados"></button>
            <span>Banco de Dados</span></li>
 
-           <li><button><img src="./assets/pie-chart-alt-2-svgrepo-com.svg" alt="Lógica de Programação"></button>
+           <li><button onclick="togglePopup(this, 'Lógica de Programação', 'Lógica de Programação é a base para resolver problemas usando algoritmos.')">
+            <img src="./assets/pie-chart-alt-2-svgrepo-com.svg" alt="Lógica de Programação"></button>
            <span>Lógica de Programação</span></li>
 
-           <li><button><img src="./assets/python-svgrepo-com.svg" alt="Python"></button>
+           <li><button onclick="togglePopup(this, 'Python', 'Python é uma linguagem de programação interpretada e de alto nível.')">
+            <img src="./assets/python-svgrepo-com.svg" alt="Python"></button>
            <span>Python</span></li>
 
-           <li><button><img src="./assets/csharp-svgrepo-com.svg" alt="C#"></button>
+           <li><button onclick="togglePopup(this, 'C#', 'C# é uma linguagem de programação orientada a objetos.')">
+            <img src="./assets/csharp-svgrepo-com.svg" alt="C#"></button>
            <span>C#</span></li>
         
-           <li><button><img src="./assets/sql-svgrepo-com.svg" alt="SQL"></button>
+           <li><button onclick="togglePopup(this, 'SQL', 'SQL é a linguagem usada para comunicar-se com bancos de dados.')">
+            <img src="./assets/sql-svgrepo-com.svg" alt="SQL"></button>
            <span>SQL</span></li>
     
-           <li><button><img src="./assets/mysql-logo-svgrepo-com.svg" alt="MySQL"></button>
+           <li><button onclick="togglePopup(this, 'MySQL', 'MySQL é um sistema de gerenciamento de banco de dados.')">
+            <img src="./assets/mysql-logo-svgrepo-com.svg" alt="MySQL"></button>
            <span>MySQL</span></li>
-     </ul>
-    
+   
+</div>
+ 
+
+<!-- ↓ Comentário: indica que a partir daqui começa o POPUP -->
+<!-- POPUP -->
+
+
+<!-- ↓ Cria o elemento principal do popup
+     ↓ id="popup" dá um nome único para o JavaScript encontrar esse elemento
+     ↓ class="popup" permite aplicar os estilos do CSS -->
+<div id="popup" class="popup">
+
+
+    <!-- ↓ Cria uma div para guardar todo o conteúdo interno do popup
+         ↓ class="popup-conteudo" permite estilizar essa parte pelo CSS -->
+    <div class="popup-conteudo">
+
+
+        <!-- ↓ Cria um título dentro do popup
+             ↓ id="popup-titulo" permite que o JavaScript altere o título
+             ↓ Exemplo: HTML, CSS, JavaScript, etc. -->
+        <h2 id="popup-titulo"></h2>
+
+
+        <!-- ↓ Cria um parágrafo para mostrar o texto/descrição
+             ↓ id="popup-texto" permite que o JavaScript altere esse texto -->
+        <p id="popup-texto"></p>
+
+
+        <!-- ↓ Cria o botão X para fechar o popup
+             ↓ class="popup-fechar" permite estilizar o botão no CSS
+             ↓ onclick executa uma função quando o botão é clicado
+             ↓ fecharPopup() é a função JavaScript responsável por fechar o popup -->
+        <button class="popup-fechar" onclick="fecharPopup()"><img src="assets/clipart262136.png" alt="sword"></button>
+
+
+    <!-- ↓ Fecha a div "popup-conteudo" -->
+    </div>
+
 </div>
 
  <div class="nexrun">

@@ -221,8 +221,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
     
      border-radius: 50px;
-     backdrop-filter: blur(4px);
-     -webkit-backdrop-filter: blur(4px);
+   
      border-radius: 8px;
     max-width: 580px;
      width: 100%;
@@ -233,6 +232,11 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
      font-weight: 500; font-weight: 24px; 
     line-height: 24px;
     margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 
@@ -426,8 +430,8 @@ ul li a{
     border: 1px solid rgb(var(--stroke-color));
     border-radius: none;
 
-    -webkit-backdrop-filter: blur(04px);
-    backdrop-filter: blur(04px);
+    -webkit-backdrop-filter: blur(45px);
+    backdrop-filter: blur(45px);
    
     text-decoration: none;
     font-weight: 500;
@@ -470,8 +474,8 @@ ul li a:hover {
     border-radius: 50%;
     border: 1.5px solid var(--surface-color-hover);
 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(04px);
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px);
 
     
 }
@@ -483,62 +487,126 @@ ul li a:hover {
     background: var(--hightlight-color);
 }
 
-.formacoes li {
-     display: flex;
-  flex-direction: column;
-  align-items: center;
+/* ↓ Container principal das formações */
+.formacoes {
+    
+    display: flex;
 
-  
-}
+    /* ↓ Permite que os elementos quebrem para outra linha */
+    flex-wrap: wrap;
 
+    /* ↓ Espaçamento entre os elementos */
+    gap: 16px;
 
-.formacoes ul {
+    /* ↓ Centraliza as formações */
+    justify-content: center;
+
+    /* ↓ Centraliza verticalmente */
+    align-items: center;
+
+    
     opacity: 0;
 
     animation: aparecer 2s forwards;
     animation-delay: 3s; /* espera antes de tudo começar */
     animation-iteration-count: 1; /* NÃO repete */
-
-
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px; /* 👈 melhor que margin */
 }
 
+
+/* ↓ Imagens/ícones das formações */
 .formacoes img {
 
-    opacity: 0;
+    background-color: var(--highlight-color);
+
+    /* ↓ Faz aparecer o cursor de mão */
     cursor: pointer;
 
-    animation: aparecer 2s forwards;
-    animation-delay: 3s; /* espera antes de tudo começar */
-    animation-iteration-count: 1; /* NÃO repete */
+    /* ↓ Tamanho */
+    height: 60px;
+    width: 60px;
+
+    /* ↓ Espaçamento interno */
+    padding: 12px;
+
+    /* ↓ Deixa a imagem redonda */
+    border-radius: 50%;
+
+    /* ↓ Borda */
+    border: 1.5px solid var(--surface-color-hover);
+
+    /* ↓ Efeito de desfoque */
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px);
+
+}
+
+/* ↓ A lista inteira organiza os itens lado a lado */
+.formacoes ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
 
 
-  height: 60px;
-  width: 60px;
-  padding: 12px;
+/* ↓ Cada tecnologia */
+.formacoes li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 
-  border-radius: 50%;
-  border: 1.5px solid var(--surface-color-hover);
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 
+}
+.formacoesabrir {
+
+
+  border: 1px solid var(--surface-color);
+
+  height: 100%;
+  width: 0; /* começa fechada */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
 
-  
+  background-size: cover;
+
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
 }
-    
-.formacoes {
+
+.formacoesabrir a {
 
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(var(--hightlight-color));
+  display: block;
 }
+
+.formacoesfechar .fechar {
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+}
+
 
 #formacoes button {
 
@@ -548,6 +616,164 @@ ul li a:hover {
 
     object-fit: contain;
    
+}
+
+#popup-texto {
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+/* ↓ Seleciona o elemento que possui a classe "popup" */
+.popup { 
+
+    /* ↓ Faz o popup ficar fixo na tela
+       ↓ Mesmo que a página seja rolada, ele permanece no mesmo lugar */
+    position: fixed; 
+
+
+    /* ↓ Posiciona o topo do popup em 50% da altura da tela */
+    top: 50%; 
+
+
+    /* ↓ Posiciona o lado esquerdo do popup em 50% da largura da tela */
+    left: 50%; 
+
+
+    /* ↓ Move o popup para trás metade de sua própria largura e altura
+       ↓ fazendo com que ele fique realmente centralizado
+       ↓ scale(0.8) deixa o popup inicialmente com 80% do tamanho */
+    transform: translate(-50%, -50%) scale(0.8); 
+
+
+    /* ↓ Define a largura do popup */
+    width: 300px; 
+
+
+    /* ↓ Cria espaço interno entre o conteúdo e a borda do popup */
+    padding: 25px; 
+
+
+    /* ↓ Define a cor do fundo do popup */
+    background: var(--hightlight-color); 
+
+
+    /* ↓ Arredonda os cantos do popup */
+    border-radius: 15px; 
+
+
+    /* ↓ Cria uma sombra ao redor do popup
+       ↓ 0 = deslocamento horizontal
+       ↓ 10px = deslocamento vertical
+       ↓ 40px = espalhamento/desfoque
+       ↓ rgba = define a cor preta com transparência */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); 
+
+
+    /* ↓ Deixa o popup completamente transparente */
+    opacity: 0; 
+
+
+    /* ↓ Esconde o popup visualmente */
+    visibility: hidden; 
+
+
+    /* ↓ Cria uma transição suave de 0.2 segundos
+       ↓ quando alguma propriedade muda */
+    transition: 0.2s ease; 
+
+
+    /* ↓ Define a camada do popup
+       ↓ 9999 faz com que ele fique acima de outros elementos */
+    z-index: none; 
+} 
+
+
+
+/* ↓ Seleciona o popup quando ele possui
+   ↓ as classes "popup" E "ativo" */
+.popup.ativo { 
+
+
+    /* ↓ Deixa o popup completamente visível */
+    opacity: 1; 
+
+
+    /* ↓ Torna o popup visível */
+    visibility: visible; 
+
+
+    /* ↓ Mantém o popup centralizado
+       ↓ scale(1) coloca o popup em 100% do tamanho
+       ↓ criando também o efeito de aparecer */
+    transform: translate(-50%, -50%) scale(1); 
+} 
+
+
+
+/* ↓ Seleciona o elemento <h2>
+   ↓ que estiver dentro de .popup-conteudo */
+.popup-conteudo h2 { 
+
+
+    /* ↓ Remove o espaço/margem que normalmente existe
+       ↓ acima do título */
+    margin-top: 0; 
+
+    text-align: center; /* ↓ Centraliza o título */
+
+} 
+
+.popup-fechar text {
+    text-align: center; /* ↓ Centraliza o título */
+    color: var(--text-color);
+}
+
+
+/* ↓ Seleciona o elemento <p>
+   ↓ que estiver dentro de .popup-conteudo */
+.popup-conteudo p { 
+
+
+    /* ↓ Define o espaço entre as linhas do texto
+       ↓ Quanto maior o valor, mais espaçado fica o texto */
+    line-height: 1.5; 
+}
+.popup-fechar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ↓ Botão X para fechar o popup */
+.popup-fechar {
+    position: absolute;
+
+    /* ↓ Coloca o botão no canto inferior */
+    bottom: 10px;
+
+    /* ↓ Coloca o botão no canto direito */
+    right: 10px;
+
+    /* ↓ Tamanho do botão */
+    width: 30px;
+    height: 30px;
+
+    /* ↓ Remove a borda padrão */
+    border: none;
+
+    /* ↓ Define o fundo */
+    background: transparent;
+
+    /* ↓ Tamanho do X */
+    font-size: 20px;
+
+    /* ↓ Mostra a mãozinha ao passar o mouse */
+    cursor: pointer;
+
+   color: rgb(var(--text-color)); /* ↓ Remove o sublinhado do link */
 }
 
 .nexrun {
@@ -595,6 +821,7 @@ ul li a:hover {
     object-fit: contain;
    position: relative;
 }
+
 
 footer{
     
