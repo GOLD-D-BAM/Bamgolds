@@ -467,12 +467,12 @@ ul li a:hover {
     justify-content: center;
     padding: 12px;
 
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 0px;
+    margin-right: 1px;
     
     transition: background 0.2s;
     border-radius: 50%;
-    border: 1.5px solid var(--surface-color-hover);
+    
 
     backdrop-filter: blur(45px);
     -webkit-backdrop-filter: blur(45px);
@@ -573,7 +573,7 @@ ul li a:hover {
 }
 
 #formacoes img:hover{outline:2px solid var(--surface-color);
-    border-radius: 45%;
+    border-radius: 50%;
 
 }
 
