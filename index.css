@@ -332,9 +332,11 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     transition: all 0.3s ease;
 
 }
+
 #play {background-color: transparent;}
+
 #moon, #sun {
-       transform: translatey(2px);
+    transform: translatey(2px);
     align-items: center;
 }
 #moon { display: inline;}
@@ -812,7 +814,7 @@ ul li a:hover {
    color: rgb(var(--text-color)); /* ↓ Remove o sublinhado do link */
 }
 
-.nexrun, .return {
+.nexrun, .return, .run, .start {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -825,7 +827,8 @@ ul li a:hover {
 
 
 #next,
-#return {
+#return,
+#start {
   
     opacity: 0;
 
@@ -852,7 +855,7 @@ ul li a:hover {
 
     
 }
-#return ion-icon,#next ion-icon {
+#return ion-icon,#next ion-icon,#start ion-icon {
 
     width: 70%;
     height: 100%;
