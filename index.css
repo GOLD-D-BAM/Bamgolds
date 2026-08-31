@@ -521,7 +521,7 @@ ul li a:hover {
 /* ↓ É o "visor" do carrossel
    ↓ Tudo que sair dessa área fica escondido */
 .formacoes-visor {
-    width: 700px;
+    width: 800px;
     max-width: 90%;
 
     margin: auto;
@@ -529,6 +529,7 @@ ul li a:hover {
     overflow: hidden;
 }
 
+.box-4 {overflow: hidden;}
 /* ↓ Container principal das formações */
 .formacoes {
     
