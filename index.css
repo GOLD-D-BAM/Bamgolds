@@ -816,15 +816,10 @@ ul li a:hover {
     width: 100%;
     padding:  20px;
     box-sizing: border-box;
+
 }
 
 
-#next, #return a:hover{
-    border: 2px solid var(--surface-color-hover);
-    background-color:var(--surface-color-hover);
-    color: var(--text-color);
-    background: var(--hightlight-color);
-}
 
 #next,
 #return {
@@ -838,7 +833,7 @@ ul li a:hover {
 
     
 
-    border: none solid var(--surface-color-hover);
+    border: none ;
     border-radius: 50%;
     background: transparent;
     appearance: none;
@@ -861,6 +856,11 @@ ul li a:hover {
     object-fit: contain;
    position: relative;
    align-items: center;
+
+
+    color: var(--surface-color);
+  
+   
 }
 
 
