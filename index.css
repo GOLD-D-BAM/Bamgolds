@@ -333,7 +333,10 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 }
 #play {background-color: transparent;}
-
+#moon, #sun {
+       transform: translatey(2px);
+    align-items: center;
+}
 #moon { display: inline;}
 #sun {display: none;}
 
