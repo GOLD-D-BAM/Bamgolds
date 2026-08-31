@@ -5,9 +5,9 @@ ID- e o identificador de um cod, que pode ser usado dentro do css, após add uma
 <link rel="stylesheet" href="style.css"> comando de seletor der arquivos da pasto do html. 
 
 */
-*{ padding: 0;
+*{ padding: 1px;
 margin: 0;
-box-sizing: border-box;
+
 
 }
 
@@ -186,7 +186,9 @@ direções usadas y,z,x,w*/
   
 
 }
-
+#box-2 {  margin: 10px 10px 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/}
 
 #box-2 text {/*
 então para centralizar algo, necessário a criação do pai da div, e codificando.
@@ -196,7 +198,8 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     
    text-align: center;
    text-decoration: rgb(var(--text-color));
-    
+        padding: 2px;
+
     
 }
 
@@ -207,6 +210,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     border-radius: 50%;
      height: 112px;
     width: 112px;
+    padding: 2px;
 
 
 }
@@ -239,6 +243,18 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 }
 
+#box-3 {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+    margin-top: 24px;
+    text-align: center;
+    flex-direction: column;
+}
+
 
 .gaveta-button button, .gaveta-button img {
  opacity: 0;
@@ -262,7 +278,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
  position: fixed;
  width: 75px;
  margin-top:  -35px;
- margin-left: 30px;
+ margin-left: 10px;
  margin-right: 10px;
 
 
@@ -406,17 +422,6 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 }
 
 
-ul{
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-
-    margin-top: 24px;
-
-
-
-}
 
 ul li a{
     
@@ -465,7 +470,7 @@ ul li a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 12px;
+    padding: 10px;
 
     margin-left: 0px;
     margin-right: 1px;
@@ -487,26 +492,43 @@ ul li a:hover {
     background: var(--hightlight-color);
 }
 
-.lista-formacoes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 16px;
-
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.formacoes text {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
 }
-
-.lista-formacoes li {
-    width: 100px;
-
+.formacoes ul {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     text-align: center;
 }
+
+.formacoes li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 11px;
+    padding: 29px  ;
+
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+/* ↓ É o "visor" do carrossel
+   ↓ Tudo que sair dessa área fica escondido */
+.formacoes-visor {
+    width: 700px;
+    max-width: 90%;
+
+    margin: auto;
+
+    overflow: hidden;
+}
+
 /* ↓ Container principal das formações */
 .formacoes {
     
@@ -540,8 +562,8 @@ ul li a:hover {
     cursor: pointer;
 
     /* ↓ Tamanho */
-    height: 60px;
-    width: 60px;
+    height: 25px;
+    width: 25px;
 
     /* ↓ Espaçamento interno */
     padding: 12px;
@@ -566,6 +588,7 @@ ul li a:hover {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+
 
     backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -786,16 +809,22 @@ ul li a:hover {
    color: rgb(var(--text-color)); /* ↓ Remove o sublinhado do link */
 }
 
-.nexrun {
+.nexrun, .return {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 0 20px;
+    padding:  20px;
     box-sizing: border-box;
 }
 
 
+#next, #return a:hover{
+    border: 2px solid var(--surface-color-hover);
+    background-color:var(--surface-color-hover);
+    color: var(--text-color);
+    background: var(--hightlight-color);
+}
 
 #next,
 #return {
@@ -809,7 +838,8 @@ ul li a:hover {
 
     
 
-    border: none;
+    border: none solid var(--surface-color-hover);
+    border-radius: 50%;
     background: transparent;
     appearance: none;
     -webkit-appearance: none;
@@ -824,12 +854,13 @@ ul li a:hover {
 
     
 }
-#return img,#next img {
+#return ion-icon,#next ion-icon {
 
     width: 70%;
     height: 100%;
     object-fit: contain;
    position: relative;
+   align-items: center;
 }
 
 

@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bamss portif</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 
     
 </head>
@@ -121,9 +121,12 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
 </div>
 
 
-      
-<div id="formacoes" class="formacoes">
+      <!-- Área que limita o que aparece na tela -->
+    <div class="formacoes-visor">
 
+<div id="formacoes" class="formacoes">
+    
+  <ul>
            <li>
             <button onclick="togglePopup(this, 'HTML', 'HTML é a linguagem usada para estruturar páginas web. Ele define a organização do conteúdo, como títulos, parágrafos, listas, links e imagens.')">
             <img src="./assets/html-5-svgrepo-com.svg" alt="HTML"></button>
@@ -139,7 +142,7 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
            <li>
             <button onclick="togglePopup(this, 'JavaScript', 'JavaScript é a linguagem usada para adicionar interatividade às páginas web. Ele permite criar elementos dinâmicos, validar formulários, manipular o DOM e muito mais.')">
             <img src="./assets/js.gif" alt="JavaScript"></button>   
-            <span>JavaScript</span>
+            <span>JavaS</span>
           </li>
 
 
@@ -164,7 +167,7 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
            <li>
             <button onclick="togglePopup(this, 'Lógica de Programação', 'Lógica de Programação é a base para resolver problemas usando algoritmos. Ela envolve pensar de forma estruturada, identificar padrões e criar soluções eficientes para desafios computacionais.')">
             <img src="./assets/labirinto.png" alt="Lógica de Programação"></button>
-           <span>Lógica de Programação</span>
+           <span>Lógica</span>
           </li>
 
            <li>
@@ -190,11 +193,12 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
             <img src="./assets/mysql.png" alt="MySQL"></button>
            <span>MySQL</span>
           </li>
-   
+  </ul>
+        
+      </div>
 </div>
  
 
-<!-- ↓ Comentário: indica que a partir daqui começa o POPUP -->
 <!-- POPUP -->
 
 
@@ -230,23 +234,25 @@ Mesmo sendo iniciante, estou motivado, disposto a aprender todos os dias e pront
     <!-- ↓ Fecha a div "popup-conteudo" -->
     </div>
 
+  </div>
+
 </div>
 
  <div class="nexrun">
   
  <button id="next" class="next" onclick="proximo()">
-    <img src="./assets/next.svg" alt="next"> 
+   <ion-icon name="return-down-back-outline"></ion-icon>
   </button> 
  
    <button id="return" class="return" onclick="voltar()">
-      <img src="./assets/return.svg" alt="return">
+      <ion-icon name="return-down-forward-outline"></ion-icon>
    </button>
 
 </div>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-<script src="script.js"></script>
+<script src="index.js"></script>
 
 <script>
   window.va = window.va || function () {

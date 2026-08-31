@@ -115,3 +115,69 @@ function fecharPopup() {
     /* ↓ Informa que nenhum botão está selecionado */
     botaoAtual = null;
 }
+
+/* ↓ Guarda a posição atual do carrossel */
+let posicao = 0;
+
+
+/* ↓ Define quantos pixels cada clique vai movimentar */
+const distancia = 116;
+
+
+/* ↓ Função da seta → */
+function proximo() {
+
+    /* ↓ Pega o <ul> que contém todas as tecnologias */
+    const lista = document.querySelector("#formacoes ul");
+
+
+    /* ↓ Conta quantos <li> existem */
+    const itens = lista.querySelectorAll("li");
+
+
+    /* ↓ Avança uma posição */
+    posicao++;
+
+
+    /* ↓ Define quantos itens podem ficar visíveis */
+    const visiveis = 6;
+
+
+    /* ↓ Calcula o limite */
+    const limite = itens.length - visiveis;
+
+
+    /* ↓ Impede que passe do último item */
+    if (posicao > limite) {
+        posicao = limite;
+    }
+
+
+    /* ↓ Move o <ul> para a esquerda */
+    lista.style.transform =
+        `translateX(-${posicao * distancia}px)`;
+}
+
+
+
+/* ↓ Função da seta ← */
+function voltar() {
+
+    /* ↓ Pega o <ul> */
+    const lista = document.querySelector("#formacoes ul");
+
+
+    /* ↓ Volta uma posição */
+    posicao--;
+
+
+    /* ↓ Impede de passar do primeiro item */
+    if (posicao < 0) {
+        posicao = 0;
+    }
+
+
+    /* ↓ Move o <ul> para a direita */
+    lista.style.transform =
+        `translateX(-${posicao * distancia}px)`;
+}
