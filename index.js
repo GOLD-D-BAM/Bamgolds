@@ -21,6 +21,7 @@ if (html.classList.contains('light'))
     img.setAttribute('src', './assets/Brunogomes.jpg')
 }
 
+
 }
 /* ↓ Função responsável por fazer desaparecer o item com ID "tnt" após a animação terminar */
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ↓ Função responsável por fazer desaparecer o item com ID "tnt" após a animação terminar */
+/* ↓ Função responsável por fazer desaparecer o item com ID "conquista" após a animação terminar */
 document.addEventListener("DOMContentLoaded", () => {
   const item = document.getElementById("conquista");
 /* ↓ Adiciona um ouvinte de evento para quando a animação terminar */
@@ -39,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     item.style.display = "none"; // Faz desaparecer
   });
 });
+
+
 /* ↓ Função responsável por abrir a gaveta */
 function abrirGaveta() {
   document.getElementById("gaveta").style.width = "250px";
