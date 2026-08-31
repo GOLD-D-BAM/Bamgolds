@@ -84,7 +84,9 @@ body * {
   }
 }
 
-
+#box-text img {
+    width: 150px;
+}
 
 #box-1{ 
     /*
@@ -102,9 +104,7 @@ em cada caixa uma bordar, e tudo que for posta dentro dessa caixa ira aumentando
 
 
 
-#tnt
-
-{
+#tnt{
     
      text-align: center;
      animation: tnt 3s linear;
@@ -214,6 +214,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 
 }
+
 
 #text-box{
    
@@ -333,6 +334,43 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
 }
 
+#conquista img{ 
+    width: 250px;
+    border-radius: 10px;
+
+}
+
+#conquista {
+    animation: conquista 10s ease-in-out;
+}
+
+@keyframes conquista {
+
+    /* Começa fora da tela à esquerda */
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    /* Entra e fica no centro */
+    20% {
+        transform: translateX(0);
+    }
+
+    /* Fica parada por alguns segundos */
+    80% {
+        transform: translateX(0);
+    }
+
+    /* Sai pela direita */
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+/*keyframes de animação do tnt caindo,key frames e usado para deixar uma imagem ou 
+objeto animado,basta vc colocar a direcão dessejada do objeto que vc quer animar 
+direções usadas y,z,x,w*/
+
+
 #play {background-color: transparent;}
 
 #moon, #sun {
@@ -396,7 +434,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
   width: 0; /* começa fechada */
   position: fixed;
   top: 0;
-  left: 0;
+  left: -10px;
   background-color: transparent;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);

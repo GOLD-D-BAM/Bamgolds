@@ -1,3 +1,5 @@
+
+/*funcão responsavel pela troca de back */
 function togglemode() {
 const html = document.documentElement
 
@@ -6,33 +8,46 @@ html.classList.toggle('light')
    /// html.classList.remove('light')
 /// else 
    /// html.classList.add('light')
-const img = document.querySelector('#box-1')
 
+const img = document.querySelector('#box-1')
+ 
 if (html.classList.contains('light'))
     {
+
     img.setAttribute('src','./assets/lima.png')
-} else {
+}
+
+ else {
     img.setAttribute('src', './assets/Brunogomes.jpg')
 }
 
 }
-
+/* ↓ Função responsável por fazer desaparecer o item com ID "tnt" após a animação terminar */
 document.addEventListener("DOMContentLoaded", () => {
   const item = document.getElementById("tnt");
-
+/* ↓ Adiciona um ouvinte de evento para quando a animação terminar */
   item.addEventListener("animationend", () => {
     item.style.display = "none"; // Faz desaparecer
   });
 });
 
+/* ↓ Função responsável por fazer desaparecer o item com ID "tnt" após a animação terminar */
+document.addEventListener("DOMContentLoaded", () => {
+  const item = document.getElementById("conquista");
+/* ↓ Adiciona um ouvinte de evento para quando a animação terminar */
+  item.addEventListener("animationend", () => {
+    item.style.display = "none"; // Faz desaparecer
+  });
+});
+/* ↓ Função responsável por abrir a gaveta */
 function abrirGaveta() {
   document.getElementById("gaveta").style.width = "250px";
 }
-
+/* ↓ Função responsável por fechar a gaveta */
 function fecharGaveta() {
   document.getElementById("gaveta").style.width = "0";
 }
-
+/* ↓ Função responsável por exibir os botões de navegação */
 function proximo() {
     document.getElementById("next").style.display = ""
     document.getElementById("return").style.display = ""
