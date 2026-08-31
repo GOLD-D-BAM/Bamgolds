@@ -857,13 +857,13 @@ ul li a:hover {
 }
 #return ion-icon,#next ion-icon,#start ion-icon {
 
-    width: 70%;
+    width: 50%;
     height: 100%;
     object-fit: contain;
    position: relative;
    align-items: center;
 
-
+ 
     color: var(--surface-color);
   
    
