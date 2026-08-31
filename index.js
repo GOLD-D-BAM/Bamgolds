@@ -121,7 +121,7 @@ let posicao = 0;
 
 
 /* ↓ Define quantos pixels cada clique vai movimentar */
-const distancia = 78; // Ajuste conforme necessário
+const distancia = 116; // Ajuste conforme necessário
 
 
 /* ↓ Função da seta → */
@@ -140,7 +140,7 @@ function proximo() {
 
 
     /* ↓ Define quantos itens podem ficar visíveis */
-    const visiveis = 5;
+    const visiveis = 6;
 
 
     /* ↓ Calcula o limite */
