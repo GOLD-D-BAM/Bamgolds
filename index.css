@@ -641,7 +641,7 @@ ul li a:hover {
    width: 333px;
     max-width: 90%;
     overflow: hidden;
-    margin-left: 200px;
+    margin :auto;
 }
 
 /* ↓ Container principal das formações */
