@@ -239,7 +239,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     padding: 2px;
 
 
-}#book {
+}#book  {
     position: relative;
 
     /* A imagem pode ter no máximo 500px, mas nunca ultrapassa
@@ -253,7 +253,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     animation-delay: 3s;
 }
 
-#book  {
+#book img {
 
     width: 111%;
     height: 700px;
@@ -262,7 +262,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     border: 1px solid rgb(var(--stroke-color));
     box-shadow: 0px 0px 10px rgba(var(--stroke-color), 0.5);
     
-    border-radius: 59px;
+    border-radius: 10px;
     position: relative;
     right: 24px;
     top: -12px;
@@ -280,7 +280,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
     /* O texto ocupa somente 80% da largura da imagem,
        evitando que ele escape pelas laterais. */
-    width: 50%;
+    width: 100%;
     max-width: 0%;
 
     /* Faz palavras muito grandes quebrarem se necessário */
