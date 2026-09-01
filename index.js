@@ -158,7 +158,7 @@ function proximo() {
 
 
     /* ↓ Define quantos itens podem ficar visíveis */
-    const visiveis = 6;
+    const visiveis = 9; // Ajuste conforme necessário
 
 
     /* ↓ Calcula o limite */
