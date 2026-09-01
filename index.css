@@ -625,8 +625,9 @@ ul li a:hover {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 1px;
     gap: 11px;
-    padding: 29px  ;
+    padding: 55px  ;
 
 
     backdrop-filter: blur(4px);
@@ -637,12 +638,10 @@ ul li a:hover {
 /* ↓ É o "visor" do carrossel
    ↓ Tudo que sair dessa área fica escondido */
 .formacoes-visor {
-    width: 700px;
+   width: 333px;
     max-width: 90%;
-
-    margin: auto;
-
     overflow: hidden;
+    margin-left: 200px;
 }
 
 /* ↓ Container principal das formações */
