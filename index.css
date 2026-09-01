@@ -256,7 +256,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 #book img {
 
     width: 111%;
-    height: auto;
+    height: 900px;
     display: block;
     border-radius: 50px;
     position: relative;
