@@ -253,7 +253,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     animation-delay: 3s;
 }
 
-#book img {
+#book  {
 
     width: 111%;
     height: 700px;
@@ -280,7 +280,7 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
 
     /* O texto ocupa somente 80% da largura da imagem,
        evitando que ele escape pelas laterais. */
-    width: 90%;
+    width: 50%;
     max-width: 0%;
 
     /* Faz palavras muito grandes quebrarem se necessário */
