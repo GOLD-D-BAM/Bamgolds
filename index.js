@@ -199,3 +199,4 @@ function voltar() {
     lista.style.transform =
         `translateX(-${posicao * distancia}px)`;
 }
+
