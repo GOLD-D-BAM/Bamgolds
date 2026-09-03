@@ -310,9 +310,10 @@ então para centralizar algo, necessário a criação do pai da div, e codifican
     text-shadow:
         2px 2px 4px rgb(255, 255, 255),
         -2px -2px 4px black;
+        
 
-     background-color: transparent;
-    backdrop-filter: blur(4px);
+
+    backdrop-filter: blur(15px);
     border-radius: 50px;
     border: 1px solid rgb(var(--stroke-color));
 }
