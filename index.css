@@ -1,0 +1,1021 @@
+/*
+CSS -1
+ID- e o identificador de um cod, que pode ser usado dentro do css, após add uma ID, no css  "#" serve como seletor do ID criado. no HTML.
+
+<link rel="stylesheet" href="style.css"> comando de seletor der arquivos da pasto do html. 
+
+*/
+*{ padding: 1px;
+margin: 0;
+
+
+}
+
+
+:root{  
+    --bg-url: url(./assets/night_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(255, 255, 255);
+    --stroke-color : rgb(0, 0, 0);
+    --surface-color: rgb(255, 255, 255);
+    --surface-color-hover: rgb(255, 255, 255);
+    --hightlight-color: rgb(0, 0, 0);
+    --switch-bg: url(./assets/moon.svg);
+}
+
+
+
+
+
+.light {
+
+    --bg-url: url(./assets/light_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(0, 0, 0);
+    --stroke-color : rgb(14, 14, 14) 0.5;
+    --surface-color: rgb(0, 0, 0);
+    --surface-color-hover: rgb(0, 0, 0);
+    --hightlight-color: rgb(255, 255, 255);
+    --switch-bg: url(./assets/sun.svg);
+}
+
+/*a ultima sempre sera a priorizada  no css.*/
+
+ 
+  body.light {
+    /*
+body { background: black; - para colocar  uma cor de fundo, sempre junto de uma propriedade :red; ou  especifica no caso.
+*/
+     background-image: var(--bg-url);
+}
+/* o body e a tag que envolve todo o conteudo do html, então tudo que for colocado dentro do body, ira receber as propriedades do body
+
+text-align: center/ para centralizar
+text-right:  param deixar full direita
+text-left: pra deixar full esquerda
+*/
+body{
+   margin: 0%;
+   min-height: 100vh;
+
+     background-image: var(--bg-url);
+     background-size: cover;
+     background-attachment: scroll;
+     background-repeat: no-repeat;
+    background-position: center;
+ /*valor de repeticao do fundo=,valor de posicionamento/valor de cobrir=cover!*/
+     color: var(--text-color);
+
+      overflow-x: hidden;
+}
+
+body * {
+    font-family:  "inter", Helvetica, sans-Pixelizar;
+   -webkit-text-stroke-color: azure;
+    font-size: 20px;
+
+     
+}
+
+/* CORRIGE o BACK NO CELULAR */
+@media (max-width: 768px) {
+  body, body.light {
+      background-attachment: scroll; /* impede bug no mobile */
+      background-size: cover;        /* mantém proporcional ao celular */
+      background-position: center;   /* centraliza certinho */
+  }
+}
+
+#box-text img {
+    width: 150px;
+}
+
+#box-1{ 
+    /*
+em cada caixa uma bordar, e tudo que for posta dentro dessa caixa ira aumentando com ela.nunca a passando.
+*/
+
+     max-width: 580px;
+     width: 100%;
+     margin: 58px auto 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/
+     padding: 24px;
+   
+}
+
+#loading {
+    position: fixed;
+    inset: 0;
+    
+    width: 100%;
+    height: 100vh;
+
+    background: #000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+
+    transition: opacity 0.5s ease;
+}
+
+#loading img {
+    width: 150px;
+    height: auto;
+}
+
+#loading.oculto {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#tnt{
+    
+     text-align: center;
+     animation: tnt 3s linear;
+}
+
+@keyframes tnt {
+     0% { transform: translateY(calc(-50vw + -100px)); }
+     100% { transform: translateY(500px); }
+}/*keyframes de animação do tnt caindo,key frames e usado para deixar uma imagem ou 
+objeto animado,basta vc colocar a direcão dessejada do objeto que vc quer animar 
+direções usadas y,z,x,w*/
+
+#tnt img{
+     position: 1500px;
+     border-radius: 0%;
+     border: none;
+     height: 100px;
+     width: 100px;
+    
+}
+#explosion img{
+     width: 100%;
+     height: 100%;
+    object-fit: cover;
+}
+
+
+#explosion {
+     pointer-events: none; /* para não interferir na interação do usuário */
+     display: flex;
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100vw;
+     height: 100vh;
+     justify-content: center;
+     align-items: center;
+     z-index: 9999;
+
+     opacity: 0;
+     animation: aparecerDesaparecer 3s forwards; 
+    animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+}
+
+/* 0% = invisível
+   20% = aparece
+   80% = fica visível
+   100% = some */
+@keyframes aparecerDesaparecer {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+  /* keyframes para fazer a explosão aparecer e desaparecer,pode ser usado uma opacidade, para fazer aparecer
+  e desaparecer o item desejado quantas vezes vc quiser. so basta por a quantidade desejada!  */
+}
+
+
+@keyframes aparecer {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+    
+}
+
+
+#box-1 {
+
+
+     opacity: 0;
+    
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+    font-weight: 500; font-weight: 24px; 
+    line-height: 24px;
+    margin-top: 24px;
+  
+
+}
+#box-2 {  margin: 10px 10px 0px; /*  margin: auto;= somete largura,geralmente no css, não se configura altura. somente a largura.
+    margin: 56px auto 0px auto;= ele usa de forma automática os seletor, right,botton,top,left. em um so comando, vc selcionando os PX. e auTo.
+*/}
+
+#box-2 text {/*
+então para centralizar algo, necessário a criação do pai da div, e codificando.
+ sera possível a a centralização do algo dentro da div pai
+*/
+    margin-top: 10px;
+    
+   text-align: center;
+   text-decoration: rgb(var(--text-color));
+        padding: 2px;
+
+    
+}
+
+#box-2 img{
+     
+
+    
+    border-radius: 50%;
+     height: 112px;
+    width: 112px;
+    padding: 2px;
+
+
+}#book  {
+    position: relative;
+
+    /* A imagem pode ter no máximo 500px, mas nunca ultrapassa
+       90% da largura da tela. Isso faz ela se adaptar ao celular. */
+    width: min(500px, 90vw);
+
+    margin: 0 auto;
+
+    opacity: 0;
+    animation: aparecer 2s forwards;
+    animation-delay: 3s;
+}
+
+#book img {
+
+    width: 111%;
+    height: 700px;
+    display: block;
+    border-radius: 4px rgb(var(--surface-color));
+    border: 1px solid rgb(var(--stroke-color));
+    box-shadow: 0px 0px 10px rgba(var(--stroke-color), 0.5);
+    
+    border-radius: 10px;
+    position: relative;
+    right: 24px;
+    top: -12px;
+
+}
+
+.texto-imagem {
+
+      position: absolute;
+
+    /* Mantém o texto centralizado dentro da imagem */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    /* O texto ocupa somente 80% da largura da imagem,
+       evitando que ele escape pelas laterais. */
+    width: 100%;
+    max-width: 0%;
+
+    /* Faz palavras muito grandes quebrarem se necessário */
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+
+    text-align: center;
+
+    /* O tamanho se adapta à tela:
+       mínimo 14px, tamanho preferencial 2.5vw,
+       máximo 24px. */
+    font-size: clamp(14px, 2.5vw, 24px);
+
+    line-height: 1.3;
+
+    box-sizing: border-box;
+    
+    position: absolute;
+   
+
+    max-width: none;
+
+    color: rgb(var(--text-color));
+   
+
+    /* Ajuda o texto a aparecer sobre a imagem */
+    text-shadow:
+        2px 2px 4px rgb(255, 255, 255),
+        -2px -2px 4px black;
+        
+
+
+    backdrop-filter: blur(15px);
+    border-radius: 50px;
+    border: 1px solid rgb(var(--stroke-color));
+}
+
+#box-3 {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+    margin-top: 24px;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.gaveta-button button, .gaveta-button img {
+ opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    width: 50px;
+    height: 50px;
+}
+
+#switch{
+
+ position: fixed;
+ width: 75px;
+ margin-top:  -35px;
+ margin-left: 10px;
+ margin-right: 10px;
+
+
+   
+
+}   
+
+#switch button:hover{outline:5px solid var(--surface-color);}
+
+
+    
+
+#switch span{
+    display: inline-block; /*dsiplay-block funciona jogando o texto para ocupar tosdas a linha a baixo fazendo uma linha na vertical.
+    dsiplay-line, ele ocupa toda caixa em formato da linh na vertical.*/
+
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color );
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 999px;
+    border: 0;
+}
+
+
+
+
+ #switch button {
+
+
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid var(--surface-color);
+
+   
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   cursor: pointer;
+
+
+
+   position: absolute;
+   top: 50%;
+   right: 50px;
+   z-index: 1;
+    transform: translateY(-60%) translateX(15%);
+    transition: all 0.3s ease;
+
+}
+
+#conquista img{ 
+    width: 250px;
+    border-radius: 10px;
+
+}
+
+#conquista {
+    animation: conquista 10s ease-in-out;
+}
+
+@keyframes conquista {
+
+    /* Começa fora da tela à esquerda */
+    0% {
+        transform: translateX(-100vw);
+    }
+
+    /* Entra e fica no centro */
+    20% {
+        transform: translateX(0);
+    }
+
+    /* Fica parada por alguns segundos */
+    80% {
+        transform: translateX(0);
+    }
+
+    /* Sai pela direita */
+    100% {
+        transform: translateX(-100vw);
+    }
+}
+/*keyframes de animação do tnt caindo,key frames e usado para deixar uma imagem ou 
+objeto animado,basta vc colocar a direcão dessejada do objeto que vc quer animar 
+direções usadas y,z,x,w*/
+
+
+#play {background-color: transparent;}
+
+#moon, #sun {
+    transform: translatey(2px);
+    align-items: center;
+}
+#moon { display: inline;}
+#sun {display: none;}
+
+.light #moon { display: none;}
+.light #sun {display: inline;}
+
+
+
+
+
+@keyframes cloudsMove {
+  0% { transform: translateX(700px); }
+  100% { transform: translateX(calc(-50vw + -100px)); }
+
+  0% { opacity: 0; }
+    100% { opacity: 1; }
+    
+
+}
+
+
+
+
+
+.light  #switch button{
+ right: 0;
+    left: initial ;
+    border-radius: 50%;
+    border: 1px solid var(--surface-color);
+   
+   
+   background-repeat: no-repeat;
+   background-position: center;
+   background-size: contain;
+   cursor: pointer;
+
+
+
+   position: absolute;
+   top: 50%;
+   right: 0;
+   z-index: 1;
+
+    transform: translateX(-20%) translateY(-57%);
+   transition: all 0.3s ease;
+}
+
+
+.gaveta {
+
+
+  border: 1px solid var(--surface-color);
+
+  height: 100%;
+  width: 0; /* começa fechada */
+  position: fixed;
+  top: 0;
+  left: -10px;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  background-size: cover;
+
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.gaveta a {
+
+
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(var(--hightlight-color));
+  display: block;
+}
+
+.gaveta .fechar {
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+}
+
+
+#logobm {
+       width: 150px;
+    /* border-radius: 50%; */
+    /* height: 112px; */
+    /* width: 112px; */
+    padding: 2px;
+    /* align-items: inherit; */
+    position: relative;
+    margin: 45px;
+}
+
+
+
+ul li a{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16px;
+
+    background-color: rgb(var(--hightlight-color));
+    border: 1px solid rgb(var(--stroke-color));
+    border-radius: none;
+
+    -webkit-backdrop-filter: blur(45px);
+    backdrop-filter: blur(45px);
+   
+    text-decoration: none;
+    font-weight: 500;
+
+    transition: background  0.3s;
+    border: 1.5px solid var(--surface-color-hover);
+}
+
+
+ul li a:hover {
+    background: var(--hightlight-color, 0.5);
+    border: 1.5px solid var(--surface-color-hover);
+    color: var(--text-color)
+
+}
+
+#social-links{
+
+    display: flex;
+    justify-content: center;
+    
+
+    padding: 24px;
+    
+    font-size: 24px;
+
+}
+
+
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    margin-left: 0px;
+    margin-right: 1px;
+    
+    transition: background 0.2s;
+    border-radius: 50%;
+    
+
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px);
+
+    
+}
+
+#social-links a:hover{
+    border: 2px solid var(--surface-color-hover);
+    background-color:var(--surface-color-hover);
+    color: var(--text-color);
+    background: var(--hightlight-color);
+}
+
+.formacoes text {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    color: var(--text-color);
+}
+.formacoes ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.formacoes li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1px;
+    gap: 11px;
+    padding: 55px  ;
+
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+/* ↓ É o "visor" do carrossel
+   ↓ Tudo que sair dessa área fica escondido */
+.formacoes-visor {
+   width: 333px;
+    max-width: 90%;
+    overflow: hidden;
+    margin :auto;
+}
+
+/* ↓ Container principal das formações */
+.formacoes {
+    
+    /* ↓ Permite que os elementos quebrem para outra linha */
+    flex-wrap: wrap;
+
+    /* ↓ Espaçamento entre os elementos */
+    gap: 16px;
+
+    /* ↓ Centraliza as formações */
+    justify-content: center;
+
+    /* ↓ Centraliza verticalmente */
+    align-items: center;
+
+    
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+}
+
+
+/* ↓ Imagens/ícones das formações */
+.formacoes img {
+
+    background-color: var(--highlight-color);
+
+    /* ↓ Faz aparecer o cursor de mão */
+    cursor: pointer;
+
+    /* ↓ Tamanho */
+    height: 25px;
+    width: 25px;
+
+    /* ↓ Espaçamento interno */
+    padding: 12px;
+
+    /* ↓ Deixa a imagem redonda */
+    border-radius: 50%;
+
+    /* ↓ Borda */
+    border: 1.5px solid var(--surface-color-hover);
+
+    /* ↓ Efeito de desfoque */
+    backdrop-filter: blur(45px);
+    -webkit-backdrop-filter: blur(45px);
+
+}
+
+
+
+/* ↓ Cada tecnologia */
+.formacoes li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+#formacoes img:hover{outline:2px solid var(--surface-color);
+    border-radius: 50%;
+
+}
+
+.formacoesabrir {
+
+
+  border: 1px solid var(--surface-color);
+
+  height: 100%;
+  width: 0; /* começa fechada */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  background-size: cover;
+
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1;
+}
+
+.formacoesabrir a {
+
+
+  padding: 10px 20px;
+  text-decoration: none;
+  color: rgb(var(--hightlight-color));
+  display: block;
+}
+
+.formacoesfechar .fechar {
+
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+}
+
+
+#formacoes button {
+    border-radius: 50px;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+
+    object-fit: contain;
+   
+}
+
+#popup-texto {
+
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 10px;
+    color: var(--text-color);
+}
+/* ↓ Seleciona o elemento que possui a classe "popup" */
+.popup { 
+
+    /* ↓ Faz o popup ficar fixo na tela
+       ↓ Mesmo que a página seja rolada, ele permanece no mesmo lugar */
+    position: fixed; 
+
+
+    /* ↓ Posiciona o topo do popup em 50% da altura da tela */
+    top: 50%; 
+
+
+    /* ↓ Posiciona o lado esquerdo do popup em 50% da largura da tela */
+    left: 50%; 
+
+
+    /* ↓ Move o popup para trás metade de sua própria largura e altura
+       ↓ fazendo com que ele fique realmente centralizado
+       ↓ scale(0.8) deixa o popup inicialmente com 80% do tamanho */
+    transform: translate(-50%, -50%) scale(0.8); 
+
+
+    /* ↓ Define a largura do popup */
+    width: 300px; 
+
+
+    /* ↓ Cria espaço interno entre o conteúdo e a borda do popup */
+    padding: 25px; 
+
+
+    /* ↓ Define a cor do fundo do popup */
+    background: var(--hightlight-color); 
+
+
+    /* ↓ Arredonda os cantos do popup */
+    border-radius: 15px; 
+
+
+    /* ↓ Cria uma sombra ao redor do popup
+       ↓ 0 = deslocamento horizontal
+       ↓ 10px = deslocamento vertical
+       ↓ 40px = espalhamento/desfoque
+       ↓ rgba = define a cor preta com transparência */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); 
+
+
+    /* ↓ Deixa o popup completamente transparente */
+    opacity: 0; 
+
+
+    /* ↓ Esconde o popup visualmente */
+    visibility: hidden; 
+
+
+    /* ↓ Cria uma transição suave de 0.2 segundos
+       ↓ quando alguma propriedade muda */
+    transition: 0.2s ease; 
+
+
+    /* ↓ Define a camada do popup
+       ↓ 9999 faz com que ele fique acima de outros elementos */
+    z-index: none; 
+} 
+
+
+
+/* ↓ Seleciona o popup quando ele possui
+   ↓ as classes "popup" E "ativo" */
+.popup.ativo { 
+
+
+    /* ↓ Deixa o popup completamente visível */
+    opacity: 1; 
+
+
+    /* ↓ Torna o popup visível */
+    visibility: visible; 
+
+
+    /* ↓ Mantém o popup centralizado
+       ↓ scale(1) coloca o popup em 100% do tamanho
+       ↓ criando também o efeito de aparecer */
+    transform: translate(-50%, -50%) scale(1); 
+
+    z-index: 999;
+} 
+
+
+
+/* ↓ Seleciona o elemento <h2>
+   ↓ que estiver dentro de .popup-conteudo */
+.popup-conteudo h2 { 
+
+
+    /* ↓ Remove o espaço/margem que normalmente existe
+       ↓ acima do título */
+    margin-top: 0; 
+
+    text-align: center; /* ↓ Centraliza o título */
+
+} 
+
+.popup-fechar text {
+    text-align: center; /* ↓ Centraliza o título */
+    color: var(--text-color);
+}
+
+
+/* ↓ Seleciona o elemento <p>
+   ↓ que estiver dentro de .popup-conteudo */
+.popup-conteudo p { 
+
+
+    /* ↓ Define o espaço entre as linhas do texto
+       ↓ Quanto maior o valor, mais espaçado fica o texto */
+    line-height: 1.5; 
+}
+.popup-fechar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* ↓ Botão X para fechar o popup */
+.popup-fechar {
+    position: absolute;
+
+    /* ↓ Coloca o botão no canto inferior */
+    bottom: 10px;
+
+    /* ↓ Coloca o botão no canto direito */
+    right: 10px;
+
+    /* ↓ Tamanho do botão */
+    width: 30px;
+    height: 30px;
+
+    /* ↓ Remove a borda padrão */
+    border: none;
+
+    /* ↓ Define o fundo */
+    background: transparent;
+
+    /* ↓ Tamanho do X */
+    font-size: 20px;
+
+    /* ↓ Mostra a mãozinha ao passar o mouse */
+    cursor: pointer;
+
+   color: rgb(var(--text-color)); /* ↓ Remove o sublinhado do link */
+}
+
+.nexrun, .return, .run, .start {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding:  20px;
+    box-sizing: border-box;
+
+}
+
+
+
+#next,
+#return,
+#start {
+  
+    opacity: 0;
+
+     animation: aparecer 2s forwards;
+     animation-delay: 3s; /* espera antes de tudo começar */
+     animation-iteration-count: 1; /* NÃO repete */
+    transition: background 0.2s;
+
+    
+
+    border: none ;
+    border-radius: 50%;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+
+   
+    position: relative;
+    cursor: pointer;
+
+    width: 100px;
+    height: 100px;
+    padding: 0;
+
+    
+}
+#return ion-icon,#next ion-icon,#start ion-icon {
+
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+   position: relative;
+   align-items: center;
+
+ 
+    color: var(--surface-color);
+  
+   
+}
+
+
+footer{
+    
+    padding: 24px;
+
+    ;
+    text-align: center; color: var(--text-color);
+   font-size: 14px;
+
+} 
+
+
+@media (min-width: 1080px) {
+  :root {
+   --bg-url: url(./assets/mine-bg-dark.png);}
+
+  .light {
+--bg-url: url(./assets/mine-bg-desktop.png);
+}
+}
+* {
+  font-family: "Pixelify Sans", sans-serif !important;
+}
+
+

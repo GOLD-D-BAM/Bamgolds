@@ -1,0 +1,105 @@
+
+/*
+CSS -1
+ID- e o identificador de um cod, que pode ser usado dentro do css, após add uma ID, no css  "#" serve como seletor do ID criado. no HTML.
+
+<link rel="stylesheet" href="style.css"> comando de seletor der arquivos da pasto do html. 
+
+*/
+*{ padding: 1px;
+margin: 0;
+
+
+}
+
+
+:root{  
+    --bg-url: url(./assets/netherdesktop.jpg);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(255, 255, 255);
+    --stroke-color : rgb(0, 0, 0);
+    --surface-color: rgb(255, 255, 255);
+    --surface-color-hover: rgb(255, 255, 255);
+    --hightlight-color: rgb(0, 0, 0);
+    --switch-bg: url(./assets/moon.svg);
+}
+
+
+
+
+
+.light {
+
+    --bg-url: url(./assets/light_mobile_mine.png);/*backgroundimage: URL{nome da pasta/e arquivoo}*/
+    --text-color: rgb(0, 0, 0);
+    --stroke-color : rgb(14, 14, 14) 0.5;
+    --surface-color: rgb(0, 0, 0);
+    --surface-color-hover: rgb(0, 0, 0);
+    --hightlight-color: rgb(255, 255, 255);
+    --switch-bg: url(./assets/sun.svg);
+}
+
+/*a ultima sempre sera a priorizada  no css.*/
+
+ 
+  body.light {
+    /*
+body { background: black; - para colocar  uma cor de fundo, sempre junto de uma propriedade :red; ou  especifica no caso.
+*/
+     background-image: var(--bg-url);
+}
+/* o body e a tag que envolve todo o conteudo do html, então tudo que for colocado dentro do body, ira receber as propriedades do body
+
+text-align: center/ para centralizar
+text-right:  param deixar full direita
+text-left: pra deixar full esquerda
+*/
+body{
+   margin: 0%;
+   min-height: 100vh;
+
+     background-image: var(--bg-url);
+     background-size: cover;
+     background-attachment: scroll;
+     background-repeat: no-repeat;
+    background-position: center;
+ /*valor de repeticao do fundo=,valor de posicionamento/valor de cobrir=cover!*/
+     color: var(--text-color);
+
+      overflow-x: hidden;
+}
+
+body * {
+    font-family:  "inter", Helvetica, sans-Pixelizar;
+   -webkit-text-stroke-color: azure;
+    font-size: 20px;
+
+     
+}
+
+/* CORRIGE o BACK NO CELULAR */
+@media (max-width: 768px) {
+  body, body.light {
+      background-attachment: scroll; /* impede bug no mobile */
+      background-size: cover;        /* mantém proporcional ao celular */
+      background-position: center;   /* centraliza certinho */
+  }
+}
+
+.box-1 {
+    position: relative;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#imagens-cod {
+    width: 25%;
+    height: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
