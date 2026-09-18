@@ -487,6 +487,46 @@ direções usadas y,z,x,w*/
 }
 
 
+.botomjogos button, .botomjogos img {
+    opacity: 0;
+
+    animation: aparecer 2s forwards;
+    animation-delay: 3s; /* espera antes de tudo começar */
+    animation-iteration-count: 1; /* NÃO repete */
+
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+
+    width: 150px;
+    height: 65px;
+
+    background-repeat: no-repeat;
+}
+
+.botomjogos ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.botomjogos li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1px;
+    gap: 11px;
+    padding: 55px  ;
+
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
+
+
 .gaveta-button button, .gaveta-button img {
  opacity: 0;
 
@@ -502,6 +542,8 @@ direções usadas y,z,x,w*/
 
     width: none;
     height: 65px;
+
+    background-repeat: no-repeat;
 }
 
 .gaveta {
@@ -543,6 +585,26 @@ direções usadas y,z,x,w*/
   font-size: 30px;
 }
 
+
+#containerbuton  li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+#containerbuton  ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 1px;
+    gap: 100px;
+
+
+    backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+}
 
 ul li a{
     
